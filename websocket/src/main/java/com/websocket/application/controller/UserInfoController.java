@@ -1,6 +1,6 @@
 package com.websocket.application.controller;
 
-import com.websocket.domain.service.UserInfoService;
+import com.websocket.domain.service.UserService;
 import com.websocket.external.entity.UserInfoEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,20 +10,20 @@ import java.util.List;
 
 @RestController
 public class UserInfoController {
-    private final UserInfoService userInfoService;
+    private final UserService userService;
 
-    public UserInfoController(UserInfoService userInfoService) {
-        this.userInfoService = userInfoService;
+    public UserInfoController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/users")
     public List<UserInfoEntity> getAllUsersInfo() {
-        return userInfoService.getAllUserInfo();
+        return userService.getAllUserInfo();
     }
 
     @PostMapping("/user")
     public void addUserInfo(@RequestBody UserInfoEntity userInfo) {
-        userInfoService.addUser(userInfo);
+        userService.addUser(userInfo);
     }
 
 
