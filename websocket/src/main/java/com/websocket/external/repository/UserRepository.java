@@ -1,7 +1,10 @@
 package com.websocket.external.repository;
 
-import com.websocket.external.entity.UserInfoEntity;
+import com.websocket.external.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserInfoEntity, Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    Optional<UserEntity> findByUsername(String username);
 }

@@ -5,25 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b796246-d427-4ed0-9049-adc325ce326e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/ImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/ImageDataEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/ImageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/infrastructure/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/util/ImageCompressor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../websocket-client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/ImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/dto/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/dto/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/MessageEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/MessageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/mapper/ImageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/mapper/MessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/websocket/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../websocket-client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../websocket-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../websocket-client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../websocket-client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../websocket-client/src/components/ConnectionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../websocket-client/src/components/ConnectionSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../websocket-client/src/hooks/useBackendHook.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/UserInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/UserInfoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/infrastructure/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/infrastructure/config/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/application/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/domain/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/ImageDataEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/ImageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/UserInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/external/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/websocket/util/ImageCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/websocket/util/ImageCompressor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,7 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -212,7 +217,21 @@
       <workItem from="1751831161431" duration="1050000" />
       <workItem from="1751832365200" duration="5391000" />
       <workItem from="1751917979224" duration="213000" />
-      <workItem from="1751918216053" duration="8602000" />
+      <workItem from="1751918216053" duration="10659000" />
+      <workItem from="1752005833469" duration="720000" />
+      <workItem from="1752009927220" duration="1303000" />
+      <workItem from="1752011246338" duration="1861000" />
+      <workItem from="1752078775206" duration="3084000" />
+      <workItem from="1752157170966" duration="319000" />
+      <workItem from="1752236019808" duration="1068000" />
+      <workItem from="1752407237397" duration="8000" />
+      <workItem from="1752407855370" duration="5822000" />
+      <workItem from="1752427931345" duration="407000" />
+      <workItem from="1752486328484" duration="1918000" />
+      <workItem from="1752604195790" duration="1985000" />
+      <workItem from="1752606216736" duration="1389000" />
+      <workItem from="1752607645228" duration="459000" />
+      <workItem from="1752608147463" duration="3028000" />
     </task>
     <servers />
   </component>

@@ -1,11 +1,14 @@
-import { useState, type JSXElementConstructor, type Key, type ReactElement, type ReactNode, type ReactPortal } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { useWebSocket } from './hooks/WebsocketHook';
 import ConnectionSection from './components/ConnectionSection';
+import UserCard from './components/UserCard';
+import { useImageApi } from './hooks/imageHook';
 
 function App() {
   const [name, setName] = useState('');
-  const { connected, connect, disconnect, messages, sendMessage } = useWebSocket();
+  const { connected, connect, disconnect, sendMessage } = useWebSocket();
+  const { url } = useImageApi();
 
   const handleSendName = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,24 +40,8 @@ function App() {
             </button>
           </form>
         </div>
-      </div><div className="row">
-        <div className="col-md-12">
-          <table id="conversation" className="table table-striped">
-            <thead>
-              <tr>
-                <th>Greetings</th>
-              </tr>
-            </thead>
-            <tbody id="greetings">
-              {messages.map((msg: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined, idx: Key | null | undefined) => (
-                <tr key={idx}>
-                  <td>{msg}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
+      <UserCard name="Radu" url={url} message='asd' />
     </>
 
   );

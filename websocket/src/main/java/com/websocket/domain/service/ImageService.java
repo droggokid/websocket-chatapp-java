@@ -1,16 +1,12 @@
 package com.websocket.domain.service;
 
-import com.websocket.external.entity.ImageDataEntity;
+import com.websocket.external.entity.ImageEntity;
 import com.websocket.external.repository.ImageRepository;
 import com.websocket.util.ImageCompressor;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.Optional;
-
-;
 
 @Service
 public class ImageService {
@@ -21,21 +17,20 @@ public class ImageService {
     }
 
     @Transactional
-    public String uploadImage(MultipartFile file) throws IOException {
-        imageRepository.save(ImageDataEntity.builder()
-                .name(file.getOriginalFilename())
-                .type(file.getContentType())
-                .imageData(ImageCompressor.compressImage(file.getBytes()))
-                .build());
-
-        return "Image uploaded successfully: " + file.getOriginalFilename();
+    public ImageEntity uploadImage(ImageEntity imageEntity) {
+        imageEntity.setImageData(ImageCompressor.compressImage(imageEntity.getImageData()));
+        return imageRepository.save(imageEntity);
     }
 
     @Transactional
-    public ImageDataEntity getImageDataEntityByName(String name) {
-        Optional<ImageDataEntity> dbImage = imageRepository.findByName(name);
+    public ImageEntity getImageDataEntityById(Long imageId) {
+        Optional<ImageEntity> dbImage = imageRepository.findById(imageId);
 
-        return ImageDataEntity.builder()
+        if (dbImage.isEmpty()) {
+            throw new RuntimeException("Image not found");
+        }
+
+        return ImageEntity.builder()
                 .name(dbImage.get().getName())
                 .type(dbImage.get().getType())
                 .imageData(ImageCompressor.decompressImage(dbImage.get().getImageData()))
@@ -43,8 +38,13 @@ public class ImageService {
     }
 
     @Transactional
-    public byte[] getImage(String name) {
-        Optional<ImageDataEntity> dbImage = imageRepository.findByName(name);
+    public byte[] getImage(Long imageId) throws RuntimeException {
+        Optional<ImageEntity> dbImage = imageRepository.findById(imageId);
+
+        if (dbImage.isEmpty()) {
+            throw new RuntimeException("Image not found with id: " + imageId);
+        }
+
         return ImageCompressor.decompressImage(dbImage.get().getImageData());
     }
 }

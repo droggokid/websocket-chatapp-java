@@ -1,4 +1,4 @@
-import { useBackendApi } from "../hooks/useBackendHook";
+import { useBackendApi } from "../hooks/UseBackendHook";
 import Button from "./Button";
 
 interface ConnectionSectionProps {

@@ -1,10 +1,14 @@
 package com.websocket.domain.service;
 
-import com.websocket.external.entity.UserInfoEntity;
+import com.websocket.application.dto.User;
+import com.websocket.external.entity.UserEntity;
 import com.websocket.external.repository.UserRepository;
+import com.websocket.mapper.UserMapper;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -14,13 +18,19 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<UserInfoEntity> getAllUserInfo() {
-        return userRepository.findAll();
+    public List<User> getAllUserInfo() {
+        return UserMapper.userEntitiesToUserDtos(userRepository.findAll());
     }
 
-    public void addUser(@RequestBody UserInfoEntity userInfoEntity) {
-        if (userInfoEntity != null) {
-            userRepository.save(userInfoEntity);
+    @Transactional
+    public User saveUser(User user) {
+        Optional<UserEntity> existingUser = userRepository.findByUsername(user.getUsername());
+        if (existingUser.isPresent()) {
+            throw new RuntimeException("Username already exists: " + user.getUsername());
         }
+
+        UserEntity dbUser = UserMapper.UserDtoToUserEntity(user);
+        UserEntity savedUser = userRepository.save(dbUser);
+        return UserMapper.userEntityToUserDto(savedUser);
     }
 }
